@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Notepad</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HomePage</title>
+    <style>
+
+        button {
+            background-color: white;
+            border: none;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 100%;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+            transition: all 0.3s ease-in-out;  
+            user-select:none;
+            
+        }
+        button:hover{
+            background-color: rgb(65, 64, 64);
+            color:white;
+            scale:1.1
+        }
+        h1{
+            font-family: sans-serif;
+            color:white;
+            transition: all 0.3s ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        h1:hover{
+            color:rgb(65, 64, 64);
+            scale:1.1;
+            cursor:default;
+            text-shadow: 2px 2px 4px rgb(255, 255, 255);
+        }
+    </style>
 </head>
-<body style="text-align:center;background-color:gray;color:white;font-family: sans-serif;">
-    <h2>Notepad</h2>
-    <textarea id="sheet" style="width:80%;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family: sans-serif; border-radius:10px; outline: solid black; font-size:20px"></textarea>
-    <script>
-        const sheet = document.getElementById('sheet');
-        sheet.style.height = window.innerHeight / 1.35 + 'px';
 
-        window.onload = () => {
-            const savedContent = localStorage.getItem('notepad-content');
-            if (savedContent) {
-                sheet.value = savedContent;
-            }
-        };
-
-        sheet.addEventListener('input', () => {
-            localStorage.setItem('notepad-content', sheet.value);
-        });
-    </script>
-    <p style="font-size:13px">Ctrl + LeftShit to make text left to right<span style="font-weight: bold; font-size: 15px; color:rgba(71, 71, 71, 0.37); user-select:none;"> │ </span>Ctrl + RightShift to make text right to left</p>
+<body style='background-color:gray; text-align:center;'>
+<h1>Home Page</h1>
+    <button href="graphingcalc.html">
+        Graphing Calculator
+    </button>
+    <button href="websitemaker.html">Website Maker</button>
 </body>
 </html>
