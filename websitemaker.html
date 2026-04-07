@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::selection {
+            background-color: rgb(255, 255, 255);
+            color: black;
+        }
+
+        .ld {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            background-color: rgb(136, 136, 136);
+            width: 15%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: fixed;
+            padding: 10px 5px;
+            text-align: center;
+            gap: 7px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .ldb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+            background-color: rgb(124, 124, 124);
+            height: 30px;
+            cursor: pointer;
+            color: white;
+            font-family: sans-serif;
+            border: 1px solid #444;
+            transition: 0.3s;
+            user-select: none;
+            border-radius: 8px;
+            border: 2px solid rgb(0, 0, 0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.692);
+            font-size: 1.5cqw;
+        }
+
+        .ldb:hover {
+            background-color: rgb(102, 102, 102);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+.ed {
+    position: absolute;
+    left: 17%;
+    width: 83%;
+    height: 100vh;
+    overflow-y: auto; /* للسماح بالتمرير إذا زادت العناصر */
+    display: flex;
+    flex-direction: column; /* ترتيب العناصر تحت بعضها */
+    align-items: center;    /* توسيط العناصر أفقياً */
+    padding-top: 20px;      /* مسافة من الأعلى */
+    gap: 15px;              /* مسافة ثابتة بين كل عنصر والآخر */
+    font-family: sans-serif;
+}
+    </style>
+    <script>
+        const b64reader = new FileReader();
+        
+        let basecode = `<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::selection {
+            background-color: rgb(255, 255, 255);
+            color: black;
+        }
+    </style>
+</head>
+<body style='text-align:center; background-color: rgb(59, 55, 87); font-family: sans-serif;'>
+
+</body>
+</html>`; // BASE CODE FOR COPY & PASTE
+
+        const colorscss = {
+            "aliceblue": "AliceBlue", "aqua": "Aqua", "black": "Black", "blue": "Blue",
+            "brown": "Brown", "crimson": "Crimson", "cyan": "Cyan", "darkblue": "DarkBlue",
+            "darkred": "DarkRed", "deeppink": "DeepPink", "gold": "Gold", "gray": "Gray",
+            "green": "Green", "hotpink": "HotPink", "indigo": "Indigo", "lime": "Lime",
+            "magenta": "Magenta", "maroon": "Maroon", "orange": "Orange", "pink": "Pink",
+            "purple": "Purple", "red": "Red", "silver": "Silver", "teal": "Teal",
+            "violet": "Violet", "white": "White", "yellow": "Yellow"
+        }; // ALL CSS COLORS FOR USER INPUT
+
+        var elementsadded = 0;
+        var elementscode = [];
+
+        function addtitle() {
+    const canvas = document.querySelector(".ed");
+    let chosentext = prompt("Choose The Text");
+    if (!chosentext) return;
+
+    let chosencolor = prompt("Choose The Color").toLowerCase().trim() || "black";
+    chosencolor = colorscss[chosencolor] || 'black';
+
+    var title = document.createElement("h1");
+    title.textContent = chosentext;
+    title.style.color = chosencolor;
+    
+    title.style.margin = "0"; 
+
+    canvas.appendChild(title);
+    elementscode = canvas.innerHTML;
+}
+
+        function addbutton() {
+    const canvas = document.querySelector(".ed");
+    let chosentext = prompt("Choose Button Text");
+    let chosencolor = prompt("Choose The Background Color").toLowerCase().trim() || "white";
+    let chosenfg = prompt("Choose The Text Color").toLowerCase().trim() || "black";
+
+    chosencolor = colorscss[chosencolor] || 'white';
+    chosenfg = colorscss[chosenfg] || 'black';
+
+    var btn = document.createElement("button");
+    btn.textContent = chosentext;
+    btn.style.backgroundColor = chosencolor;
+    btn.style.color = chosenfg;
+    btn.style.fontSize = "1.7vw";
+    btn.style.borderRadius = "5px";
+    btn.style.cursor = "pointer";
+    btn.style.border = "none";
+    btn.style.transition = "0.3s ease-in-out";
+    btn.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.3)";
+    
+    //Hover effect
+    btn.onmouseover = () => btn.style.transform = 'scale(1.1)';
+    btn.onmouseout = () => btn.style.transform = 'scale(1)';
+
+    canvas.appendChild(btn);
+    elementscode = canvas.innerHTML;
+}
+
+function addhr() {
+    const canvas = document.querySelector(".ed");
+    var h = document.createElement("hr");
+    h.style.transition = "0.3s ease-in-out";
+    h.style.width = "85%";        
+    h.style.border = "1px solid white";
+    h.style.margin = "10px 0";  
+    h.style.opacity = "0.2";    
+    canvas.appendChild(h);
+    elementscode = canvas.innerHTML;
+}
+
+
+        function copycode() {
+            var finalcode = basecode.replace("</body>", elementscode + "\n</body>");
+            navigator.clipboard.writeText(finalcode).then(function() {
+                alert("Code copied to clipboard!"); // COPYING THE CODE TO CLIPBOARD
+            }, function(err) {
+                alert("Failed to copy code: ", err);
+            });
+        }
+    </script>
+</head>
+
+<body style="background-color: rgb(59, 55, 87);">
+    <div class="ld">
+        <button class="ldb" onclick="addtitle()">Add Text</button>
+        <button class="ldb" onclick="addbutton()">Add Button</button>
+        <button class="ldb" onclick='addhr()'>Add Horizontal Rule</button>
+        <button class="ldb"></button>
+    </div>
+
+    <div class="ed"></div>
+
+    <button style="top:95%; left:95%; background-color: white; border-radius:3px; position:fixed; cursor:pointer; z-index: 1000; font-size:10px; font-weight: bold;" onclick="copycode()">Copy Code</button>
+</body>
+</html

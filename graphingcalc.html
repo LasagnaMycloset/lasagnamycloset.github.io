@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphing Calculator📐</title>
+</head>
+
+
+<body style='background-color:rgb(39, 39, 39);'>
+    
+
+    <div id='nophone'>
+        <hr style="visibility: hidden; height:5vh;">
+    </div>
+<div style='text-align:center;'><canvas id="canvas" width="600" height='400' style="border:5px solid #000000; text-align:center; background-color:rgb(0, 0, 0);"></canvas>
+</div>
+
+    <div style="text-align:center;margin:5px 0 0 5px">
+    <button style="text-align:center; cursor:pointer;border-radius:5px;background-color:white;border:2px solid black;" onclick="fdialog.showModal()">Create function</button>
+</div>
+    
+
+<button style="position: absolute;width: 30px;height: 30px;cursor: pointer;background: rgba(255, 255, 255, 0.1);backdrop-filter: blur(5px);color: white;border: 1px solid rgba(255, 255, 255, 0.2);border-radius: 8px;font-size: 1.2rem;display: flex;align-items: center;justify-content: center;transition: all 0.3s ease;box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(255,255,255,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.1)';"
+onclick="setdia.showModal()">
+    &#9881;
+</button>
+    
+<hr style="visibility: hidden; height:13px;">
+
+    <div style="display: flex; align-items: center; gap: 10px;">
+    <input type='range' id='slider' min='1' max='200' value='25' style="accent-color: blue;" oninput="maindraw()">
+    <span style='color:rgb(255, 255, 255);font-size: 20px;font-family:sans-serif;'>Zoom</span>
+    <hr style="visibility: hidden;">
+    <span style='color:rgb(255, 255, 255);font-size: 20px;font-family:sans-serif;'>function:</span>
+<input style='color:rgb(255, 255, 255);font-size: 20px;font-family:sans-serif;font-weight: bold;border:3px solid black;border-radius:15px' id='ft' oninput="maindraw()" type='text' placeholder='Type your function here'>
+<button onclick='alert(`You can type functions here only x functions\nYou can use: ln, log, sqrt, fact (factorial !), sin, cos, tan, abs, e, pi, tau, gldnrt (Golden Ratio) and JavaScript\n\nx: *\n÷: /\n^: **`)' style='color:black;font-size: 20px;font-family:sans-serif;border-radius:5px;border:2px solid black;cursor:pointer;background-color:white;'>i</button>
+    </div>
+
+    
+<dialog style='background-color:rgb(83, 83, 83);color:white;font-size: 20px;font-family:sans-serif;border-radius:15px;box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.342);height:60%' id='fdialog'>
+    <h1>Create a function</h1>
+    <textarea placeholder="Function code in JavaScript (Do not forget 'return')" style='background-color:black;border-radius:10px;border:3px solid white;color:white;font-size: 13px;font-family:monospace;margin:auto;width:80%;height:13rem' id='codef' cols="30" rows="10"></textarea>
+    <input type='text' placeholder='Function name' style='background-color:black;border-radius:10px;border:2px solid white;color:white;font-size: 15px;font-family:monospace;' id='namef'>
+    <input type="text" placeholder='Parameters space-seperated' style='background-color:black;border-radius:10px;border:2px solid white;color:white;font-size: 15px;font-family:monospace;' id='parf'>
+    <button style='background-color: red; font-family: sans-serif;color:white;font-size:20px;position:absolute;top:10px;right:10px;font-weight:bold;cursor:pointer;border-radius:7px;user-select:none' onclick="fdialog.close()">x</button>
+    <button style='background-color: rgb(0, 255, 21); font-family: sans-serif;color:rgb(0, 0, 0);font-size:20px;position:absolute;top:10px;right:50px;font-weight:bold;cursor:pointer;border-radius:7px;user-select:none' onclick="makefun()">Done</button>
+    <p style='position:absolute;top:40px;right:80px;'></p>
+
+</dialog>
+
+
+
+
+<dialog style='background-color:rgb(83, 83, 83);color:white;font-size: 20px;font-family:sans-serif;border-radius:15px;box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.342);height:60%;' id='setdia'>
+
+    <h2>Settings</h2>
+    <div style='display:flex;align-items:center;text-align:center; justify-content:start;flex-direction:row'>
+    <button style='background-color: red; font-family: sans-serif;color:white;font-size:20px;position:absolute;top:10px;right:10px;font-weight:bold;cursor:pointer;border-radius:7px;user-select:none;border:none; transition: all 0.2s ease-in-out' onclick="setdia.close()" onmouseover="this.style.backgroundColor='#FF6F6F'" onmouseout="this.style.backgroundColor='red'">&times;</button>
+    <p style='position:absolute;top:40px;right:80px;'></p>
+    <input type='color' onchange='drawcol=this.value;maindraw();' value='#ffffff' style="background-color:rgba(247, 247, 247, 0);border:none;cursor:pointer;"> <p>Drawing Color</p>
+    
+</div>
+</dialog>
+
+<script>
+var drawcol = 'white';
+const math = Math
+const takennames = ["sin" , "cos" , "tan" , "abs" , "ln" , "log" , "sqrt" , "fact" , "e" , "pi" , "tau" , "gldnrt", "si" , "centerx" , "centery" , "ctx" , "canvas" , "f" , "draws" , "maindraw" , "phone", "code" , "pars" , "name" , "ft" , "maindraw" , "makefun", "takennames", "Math", "math"];
+// fdialog.showModal()
+const phone = /Mobile|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(navigator.userAgent);
+ 
+if (phone){
+    document.getElementById('nophone').remove();
+}
+
+setTimeout(() => {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+    });
+}, 100);
+
+
+const ln = (x) => Math.log(x);
+const log =(a,x) => Math.log(x)/Math.log(a);
+const sqrt = (x) => Math.sqrt(x);
+const fact = (x) => x <= 1 ? 1 : x * fact(x - 1);
+const sin = (x) => Math.sin(x);
+const cos = (x) => Math.cos(x);
+const tan = (x) => Math.tan(x);
+const abs = (x) => Math.abs(x);
+
+const e = Math.E;
+const pi = Math.PI;
+const tau = Math.PI * 2;
+const gldnrt = (1 + sqrt(5)) / 2;
+
+let f;
+var draws=0;
+const canvas = document.getElementById('canvas');
+
+canvas.width = window.innerWidth/1.1;
+canvas.height = window.innerHeight/1.05;
+
+const ctx = canvas.getContext('2d');
+ft = document.getElementById('ft')
+
+const centerX = canvas.width / 2;
+const centerY = canvas.height / 2;
+function maindraw()
+{
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+ctx.fillStyle = 'gray';
+ctx.fillRect(centerX, 0, 2, canvas.height);
+ctx.fillRect(0, centerY, canvas.width, 2);
+
+if (ft.value.length == 0) {
+    ft.style.color="black";
+    return;
+}
+si = document.getElementById('slider').value;
+
+
+if (ft.value) {
+
+f = (x) => {
+        try {
+            ft.style.color="black";
+            return eval(document.getElementById('ft').value.toLowerCase());
+        } catch(e) {
+            ft.style.color="red";
+            return;
+        }
+    }
+}
+
+ctx.fillStyle = drawcol;
+for(let i = -centerX; i < centerX; i++) {
+    var x = i/si;
+    ctx.fillRect(
+        centerX + i, 
+
+        centerY - (f(x))*si, 
+        4,4
+    )
+}
+}
+
+maindraw();
+
+
+function makefun(){
+    var code = document.getElementById('codef').value;
+    var pars = document.getElementById('parf').value.trim().split(' ');
+    var name = document.getElementById('namef').value.trim().toLowerCase();
+    if (code.length == 0 || name.length == 0) {
+        alert('Please fill in both the function code and the function name.');
+        return;
+    }
+
+    if (takennames.includes(name.toLowerCase())){
+        alert(`Cannot name function ${name}`)
+        return;
+    }
+
+    try{
+        eval(`function ${name}(${pars.join(',')}){}`);
+    }
+    catch (e){
+        alert('Invalid function name or parameters.');
+        return;
+    }
+
+    try {
+        new Function(...pars, code);
+        fdialog.close();
+        window[name] = new Function(...pars, code);
+        document.getElementById('namef').value = '';
+        document.getElementById('parf').value = '';
+        document.getElementById('codef').value = '';
+        alert(`Function ${name} created successfully!`);
+    } catch (e) {
+        alert('Invalid function. Please check your code and parameters.');
+        return;
+    }
+}
+
+
+</script>
+</body>
+</html>
