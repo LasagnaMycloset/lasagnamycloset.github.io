@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملخص التربية المهنية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-panel: rgba(0, 0, 0, 0.55);
+            --border-light: rgba(255, 255, 255, 0.2);
+            --accent: #f3fa75;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #0f172a;
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(to bottom, #1e293b, #0f172a);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-light);
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background: var(--white);
+            color: #0f172a;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .study-section {
+            position: relative;
+            border-radius: 24px;
+            margin-bottom: 50px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid var(--border-light);
+            min-height: 4rem;
+        }
+
+        .tint {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.25);
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+        }
+
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .dim-box {
+            background: var(--dark-panel);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid var(--border-light);
+            padding: 25px;
+            border-radius: 15px;
+            height: 100%;
+        }
+
+        .dim-box h3 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            border-right: 4px solid var(--accent);
+            padding-right: 12px;
+        }
+
+        .dim-box p, .dim-box li {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        ul { list-style: none; }
+
+        .highlight-text {
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .icon-circle {
+            background: rgba(255,255,255,0.15);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+
+        @media (max-width: 768px) {
+            .content { padding: 20px; }
+            .main-title { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📚  التربية المهنية</h1>
+            <p>هذا التلخيص لا يشمل مراجعة الدروس</p>
+        </div>
+    </header>
+
+
+
+    <main class="container">
+<span style="font-weight: 1000; font-size: 3rem;text-align:center;margin:auto;">🥛🧋درس تصنيع منتجات الحليب</span><br><br>
+    <nav style="position:relative;">
+        <a href="#labanehGOTO">تصنيع اللبنة 🥛</a>
+        <a href="#cheeseGOTO">تصنيع الجبن 🧀</a>
+         <a href="#jameedGOTO">طريقة تصنيع الجميد ⚪</a>
+    </nav><br>
+
+        <!-- LABANEH -->
+<section id="labanehGOTO" class="study-section" style="background: url("/mehanisummaryimages/labaneh.jpg");background-size: cover;">
+    <div class="tint"></div>
+    <div class="content">
+        <div class="main-title"><span>⚪</span> تصنيع اللبنة</div>
+        <div class="info-grid">
+            
+            <!-- Box 1 -->
+            <div class="dim-box">
+                <h3>عرف اللبنة</h3>
+                <p class="highlight-text">ناتج تكثيف اللبن 🥛.</p>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="dim-box">
+                <h3> علل يوضع اللبن في كيس قماش خفيف 🎒؟</h3>
+                <p class="highlight-text">ليسهل نزع الماء الموجود في اللبن إلى الخارج 💧.</p>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="dim-box">
+                <h3>تحدث عن اللبنة🗣️  /   اذكر أهميتة اللبنة ✨</h3>
+                <div class="highlight-text">
+                    <p>📍 🍉غنية بالبروتانات 🍖 والدهون 🧈 والفيتامينات.</p>
+                    <p>📍تصنع من اللبن الرائب 🥛.</p>
+                    <p>📍تمتلك نسبة عالية من المواد الصلبة 🪨.</p>
+                </div>
+            </div>
+
+            <!-- Box 4 -->
+            <div class="dim-box">
+                <h3>اذكر صور اللبنة ⬜⚪</h3>
+                <div class="highlight-text">
+                    <p>📍 اللبنة العادية (الطرية).</p>
+                    <p>📍اللبنة المحفوظة بالزيت 🫒.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+        <!-- CHEESE -->
+<section id="cheeseGOTO" class="study-section"  style="background: url("/mehanisummaryimages/cheese.jpg");background-size: cover;">
+    <div class="tint"></div>
+    <div class="content">
+        <div class="main-title"><span>🧀</span> تصنيع الجبن</div>
+        <div class="info-grid">
+            
+            <!-- Box 1 -->
+            <div class="dim-box">
+                <h3>عرف الجبن🧀</h3>
+                <p class="highlight-text">ما يجمد من اللبن❄️ من اللبن, وهو عذاء صحي❤️‍🩹 ومشهور ويصنع من حليب الماعز🐐 أو البقر🐮 أو الغنم🐑.</p>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="dim-box">
+                <h3> علل للجبن موقع مهم🥇 في صناعة الألبان 🥛؟</h3>
+                <p class="highlight-text">📍 لأنه سهل الحفظ <br>📍 ويسهل تسويقه <br>📍 وقمته الغذائية مرتفعة</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- JAMEED -->
+
+<section id="jameedGOTO" class="study-section"  style="background: url("/mehanisummaryimages/jameed.jpg");background-size: cover;">
+    <div class="tint"></div>
+    <div class="content">
+        <div class="main-title"><span>⚪</span> طريقة تصنيع الجميد</div>
+        <div class="info-grid">
+            
+            <!-- Box 1 -->
+            <div class="dim-box">
+                <h3>عرف الجميد ⚪</h3>
+                <p class="highlight-text">منتج مصنع من اللبن المتخمر بعد نزع معظم الدهن 🧈.</p>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="dim-box">
+                <h3> بما يمتاز الجميد✨</h3>
+                <p class="highlight-text">📍 أقبال المستهلك عليه<br>📍 يسهل نقله وحفظه <br>📍 تميز طعمه وسرعة تحصيره</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<br>
+<span style="font-weight: 1000; font-size: 3rem;text-align:center;margin:auto;"> درس صيانة الأثاث الخشبي  🪵🛋️ </span><br><br>
+
+    <nav style="position:relative;">
+        <a href="#furniGOTO">الأثاث 🛋️</a>
+        <a href="#createfurniGOTO">طرق إنتاج قطع الأثاث 🛠️</a>
+    </nav><br>
+
+
+<section id="furniGOTO" class="study-section"  style="background: url("/mehanisummaryimages/woodfurni.jpg");background-size: cover;">
+    <div class="tint"></div>
+    <div class="content">
+        <div class="main-title"><span>🛋️</span> الأثاث</div>
+        <div class="info-grid">
+            
+
+
+            <!-- Box 1 -->
+            <div class="dim-box">
+                <h3> علل قطع الأثاث🛋️ أهم🥇 عنصر ديكور في المنزل 🏠</h3>
+                <p class="highlight-text">📍 توفر راحة😌<br>📍 تعكس ذوق صاحبه 🧑</p>
+            </div>
+
+            <!-- BOX 2 -->
+            <div class="dim-box">
+                <h3> عرف الأثاث 🛋️</h3>
+                <p class="highlight-text">كل ما يستخدم في المنزل🏠 أو المدارس🏫 من قطع متحركة أو ثابتة  لتوفير الراحة😌 وتحسين الأداء الوظيفي👍.</p>
+            </div>
+
+            <div class="dim-box">
+                <h3> كيف تحافظ على قطع الأثاث 🛋️❤️‍🩹</h3>
+                <p class="highlight-text">بإجراء صيانة🛠️ دورية؛ للمحافظة على جماليتها🌹 وديومتها.</p>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+
+<section id="createfurniGOTO" class="study-section"  style="background: url("/mehanisummaryimages/createwood.jpg");background-size: cover;">
+    <div class="tint"></div>
+    <div class="content">
+        <div class="main-title"><span>🛠️</span> طرق إنتاج قطع الأثاث</div>
+        <div class="info-grid">
+            
+            <!-- Box 1 -->
+            <div class="dim-box">
+                <h3> ماذا يمكن استخدامه بجانب قطع الأثاث 🛋️</h3>
+                <p class="highlight-text">📍 المعادن 🔨<br>📍 الزجاج 🍸<br>📍 البلاستيك 🟩<br>📍 الجلد <br>📍 الفلين</p>
+            </div>
+            <div class="dim-box">
+                <h3> من الأمثلة على قطع الأثاث 🛋️</h3>
+                <p class="highlight-text">📍 الكراسي 🪑<br>📍 الطاولات <br>📍 الخزائن 🗄️<br>📍 الأسرة 🛏️</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+</main>
+
+
+    <br>
+</body>
+</html>
