@@ -155,6 +155,114 @@
             .content { padding: 20px; }
             .main-title { font-size: 1.7rem; }
         }
+
+#search {
+    width: 80%;
+    padding: 12px 20px; 
+    font-size: 1.3rem;
+    font-family: 'Tajawal', sans-serif;
+    text-align: right; 
+    color: #ffffff; 
+    
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    
+    outline: none;
+    transition: all 0.3s ease; 
+}
+
+    #search:focus {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #ffffff;
+        box-shadow: 0 0 15px rgba(243, 250, 117, 0.3); 
+    }
+
+    #search::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.1rem;
+    }
+
+    #search-but {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-family: 'Tajawal', sans-serif;
+    color: var(--accent-color);
+    background-color: #323b4e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+    #search-but:hover {
+        background-color: #737885;
+    }
+
+    #search-but:active {
+        transform: scale(0.98);
+    }
+    .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    width: 100%;
+    margin: 20px auto;
+}
+
+#search {
+    width: 65%; 
+    padding: 12px 20px; 
+    font-size: 1.3rem;
+    font-family: 'Tajawal', sans-serif;
+    text-align: right; 
+    color: #ffffff; 
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease; 
+}
+
+#search:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(243, 250, 117, 0.3); 
+}
+
+#search::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+}
+
+#search-but {
+    padding: 12px 25px; 
+    font-size: 1.2rem;
+    font-family: 'Tajawal', sans-serif;
+    color: var(--accent-color);
+    background-color: #323b4e;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    white-space: nowrap; 
+}
+
+#search-but:hover {
+    background-color: #737885;
+}
+
+#search-but:active {
+    transform: scale(0.98);
+}
     </style>
 </head>
 <body>
@@ -164,8 +272,11 @@
         <div class="container">
             <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📚  التربية المهنية</h1>
             <p>هذا التلخيص لا يشمل مراجعة الدروس</p>
-        </div>
-    </header>
+        </div><br>
+<div class="search-container">
+    <input type="text" id="search" placeholder="ابحث عن مصطلح..." onkeydown="if(event.key === 'Enter') window.find(this.value, false, false, true);">
+    <button id="search-but" onclick="window.find(document.getElementById('search').value, false, false, true);">بحث</button>
+</div>    </header>
 
 
 
@@ -178,7 +289,7 @@
     </nav><br>
 
         <!-- LABANEH -->
-<section id="labanehGOTO" class="study-section" style="background: url('mehanisummaryimages/labaneh.jpg');background-size: cover;">
+<section id="labanehGOTO" class="study-section" style="background: url(mehanisummaryimages/labaneh.jpg);background-size: cover;">
     <div class="tint"></div>
     <div class="content">
         <div class="main-title"><span>⚪</span> تصنيع اللبنة</div>
@@ -223,7 +334,7 @@
 
 
         <!-- CHEESE -->
-<section id="cheeseGOTO" class="study-section"  style="background: url('mehanisummaryimages/cheese.jpg');background-size: cover;">
+<section id="cheeseGOTO" class="study-section"  style="background: url(mehanisummaryimages/cheese.jpg);background-size: cover;">
     <div class="tint"></div>
     <div class="content">
         <div class="main-title"><span>🧀</span> تصنيع الجبن</div>
@@ -249,7 +360,7 @@
 
 <!-- JAMEED -->
 
-<section id="jameedGOTO" class="study-section"  style="background: url('mehanisummaryimages/jameed.jpg');background-size: cover;">
+<section id="jameedGOTO" class="study-section"  style="background: url(mehanisummaryimages/jameed.jpg);background-size: cover;">
     <div class="tint"></div>
     <div class="content">
         <div class="main-title"><span>⚪</span> طريقة تصنيع الجميد</div>
@@ -282,7 +393,7 @@
     </nav><br>
 
 
-<section id="furniGOTO" class="study-section"  style="background: url('mehanisummaryimages/woodfurni.jpg');background-size: cover;">
+<section id="furniGOTO" class="study-section"  style="background: url(mehanisummaryimages/woodfurni.jpg);background-size: cover;">
     <div class="tint"></div>
     <div class="content">
         <div class="main-title"><span>🛋️</span> الأثاث</div>
@@ -314,7 +425,7 @@
 
 
 
-<section id="createfurniGOTO" class="study-section"  style="background: url('mehanisummaryimages/createwood.jpg');background-size: cover;">
+<section id="createfurniGOTO" class="study-section"  style="background: url(mehanisummaryimages/createwood.jpg);background-size: cover;">
     <div class="tint"></div>
     <div class="content">
         <div class="main-title"><span>🛠️</span> طرق إنتاج قطع الأثاث</div>
@@ -341,7 +452,7 @@
 
 
 
-<section id="darbatoshamsGOTO" class="study-section"  style="background: url('mehanisummaryimages/darbato ashams.jpg');background-size: cover;">
+<section id="darbatoshamsGOTO" class="study-section"  style="background: url(mehanisummaryimages/darbato\ ashams.jpg);background-size: cover;">
     <div class="tint"></div>
     <div class="content">
         <div class="main-title"><span></span> ضربة الشمس 🌞🌻</div>
@@ -372,7 +483,7 @@
 </section>
 
 
-<section id="roaafGOTO" class="study-section"  style="background: url('mehanisummaryimages/roaaf.jpg');background-size: cover;">
+<section id="roaafGOTO" class="study-section"  style="background: url(mehanisummaryimages/roaaf.jpg);background-size: cover;">
     <div class="tint"></div>
     <div class="content">
         <div class="main-title"><span></span> الرعاف 🩸👃</div>
@@ -414,7 +525,7 @@
         <a href="#onlineplayGOTO">اللعب اللآمن عبر الإنترنت 🛡️🌐🧑‍💻</a>
     </nav><br>
 
-<section id="safeplayrankingGOTO" class="study-section"  style="background: url('mehanisummaryimages/safeplay.jpg');background-size: cover;">
+<section id="safeplayrankingGOTO" class="study-section"  style="background: url(mehanisummaryimages/safeplay.jpg);background-size: cover;">
     <div class="tint"></div>
     <div class="content">
         <div class="main-title"><span></span>  🎮 تصنيف اللعب</div>
@@ -433,7 +544,7 @@
 
 
 
-<section id="safeplayrulesGOTO" class="study-section"  style="background: url('mehanisummaryimages/safeplayrules.jpg');background-size: cover;">
+<section id="safeplayrulesGOTO" class="study-section"  style="background: url(mehanisummaryimages/safeplayrules.jpg);background-size: cover;">
     <div class="tint"></div>
     <div class="content">
         <div class="main-title"><span></span> 🛡️🎮 قواعد عامة للعب الآمن</div>
@@ -451,7 +562,7 @@
 </section>
 
 
-<section id="onlineplayGOTO" class="study-section"  style="background: url('mehanisummaryimages/netsafeplay.jpg');background-size: cover;">
+<section id="onlineplayGOTO" class="study-section"  style="background: url(mehanisummaryimages/mehanisummaryimages/netsafeplay.jpg);background-size: cover;">
     <div class="tint"></div>
     <div class="content">
         <div class="main-title"><span></span> اللعب اللآمن عبر الإنترنت 🛡️🌐🧑‍💻</div>
@@ -478,16 +589,11 @@
     </div>
 </section>
 
-
-
-
 <span style="font-weight: 1000; font-size: 3rem;text-align:center;margin:auto;"> درس إدارة المطاعم 🍔 </span><br><br>
 
-<p>قيد الإعداد</p>
+<p>لن يتم الإعداد.</p>
 
 </main>
-
-
     <br>
     </div>
 </body>
