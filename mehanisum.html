@@ -150,119 +150,68 @@
             font-size: 1.8rem;
         }
 
-
         @media (max-width: 768px) {
             .content { padding: 20px; }
             .main-title { font-size: 1.7rem; }
         }
 
-#search {
-    width: 80%;
-    padding: 12px 20px; 
-    font-size: 1.3rem;
-    font-family: 'Tajawal', sans-serif;
-    text-align: right; 
-    color: #ffffff; 
-    
-    background: rgba(255, 255, 255, 0.05); 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    
-    outline: none;
-    transition: all 0.3s ease; 
-}
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; 
+            width: 100%;
+            margin: 20px auto;
+        }
 
-    #search:focus {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: #ffffff;
-        box-shadow: 0 0 15px rgba(243, 250, 117, 0.3); 
-    }
+        #search {
+            width: 65%; 
+            padding: 12px 20px; 
+            font-size: 1.3rem;
+            font-family: 'Tajawal', sans-serif;
+            text-align: right; 
+            color: #ffffff; 
+            background: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            outline: none;
+            transition: all 0.3s ease; 
+        }
 
-    #search::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 1.1rem;
-    }
+        #search:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #ffffff;
+            box-shadow: 0 0 15px rgba(243, 250, 117, 0.3); 
+        }
 
-    #search-but {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    font-family: 'Tajawal', sans-serif;
-    color: var(--accent-color);
-    background-color: #323b4e;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
+        #search::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.1rem;
+        }
 
-    #search-but:hover {
-        background-color: #737885;
-    }
+        #search-but {
+            padding: 12px 25px; 
+            font-size: 1.2rem;
+            font-family: 'Tajawal', sans-serif;
+            color: var(--accent-color);
+            background-color: #323b4e;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            white-space: nowrap; 
+        }
 
-    #search-but:active {
-        transform: scale(0.98);
-    }
-    .search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; 
-    width: 100%;
-    margin: 20px auto;
-}
+        #search-but:hover {
+            background-color: #737885;
+        }
 
-#search {
-    width: 65%; 
-    padding: 12px 20px; 
-    font-size: 1.3rem;
-    font-family: 'Tajawal', sans-serif;
-    text-align: right; 
-    color: #ffffff; 
-    background: rgba(255, 255, 255, 0.05); 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    outline: none;
-    transition: all 0.3s ease; 
-}
-
-#search:focus {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #ffffff;
-    box-shadow: 0 0 15px rgba(243, 250, 117, 0.3); 
-}
-
-#search::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 1.1rem;
-}
-
-#search-but {
-    padding: 12px 25px; 
-    font-size: 1.2rem;
-    font-family: 'Tajawal', sans-serif;
-    color: var(--accent-color);
-    background-color: #323b4e;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    white-space: nowrap; 
-}
-
-#search-but:hover {
-    background-color: #737885;
-}
-
-#search-but:active {
-    transform: scale(0.98);
-}
+        #search-but:active {
+            transform: scale(0.98);
+        }
     </style>
 </head>
 <body>
@@ -270,331 +219,306 @@
 <div id="all">
     <header>
         <div class="container">
-            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📚  التربية المهنية</h1>
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📚 التربية المهنية</h1>
             <p>هذا التلخيص لا يشمل مراجعة الدروس</p>
-        </div><br>
-<div class="search-container">
-    <input type="text" id="search" placeholder="ابحث عن مصطلح..." onkeydown="if(event.key === 'Enter') window.find(this.value, false, false, true);">
-    <button id="search-but" onclick="window.find(document.getElementById('search').value, false, false, true);">بحث</button>
-</div>    </header>
-
-
+        </div>
+        <br>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="ابحث عن مصطلح..." onkeydown="if(event.key === 'Enter') window.find(this.value, false, false, true);">
+            <button id="search-but" onclick="window.find(document.getElementById('search').value, false, false, true);">بحث</button>
+        </div>
+    </header>
 
     <main class="container">
-<span style="font-weight: 1000; font-size: 3rem;text-align:center;margin:auto;">🥛🧋درس تصنيع منتجات الحليب</span><br><br>
-    <nav style="position:relative;">
-        <a href="#labanehGOTO">تصنيع اللبنة 🥛</a>
-        <a href="#cheeseGOTO">تصنيع الجبن 🧀</a>
-         <a href="#jameedGOTO">طريقة تصنيع الجميد ⚪</a>
-    </nav><br>
+        <div style="font-weight: 1000; font-size: 3rem; text-align: center; margin: auto;">🥛🧋 درس تصنيع منتجات الحليب</div>
+        <br><br>
+        
+        <nav style="position: relative;">
+            <a href="#labanehGOTO">تصنيع اللبنة 🥛</a>
+            <a href="#cheeseGOTO">تصنيع الجبن 🧀</a>
+            <a href="#jameedGOTO">طريقة تصنيع الجميد ⚪</a>
+        </nav>
+        <br>
 
-        <!-- LABANEH -->
-<section id="labanehGOTO" class="study-section" style="background: url(mehanisummaryimages/labaneh.jpg);background-size: cover;">
-    <div class="tint"></div>
-    <div class="content">
-        <div class="main-title"><span>⚪</span> تصنيع اللبنة</div>
-        <div class="info-grid">
-            
-            <!-- Box 1 -->
-            <div class="dim-box">
-                <h3>عرف اللبنة</h3>
-                <p class="highlight-text">ناتج تكثيف اللبن 🥛.</p>
-            </div>
+        <section id="labanehGOTO" class="study-section" style="background: url('mehanisummaryimages/labaneh.jpg'); background-size: cover;">
+            <div class="tint"></div>
+            <div class="content">
+                <div class="main-title"><span>⚪</span> تصنيع اللبنة</div>
+                <div class="info-grid">
+                    
+                    <div class="dim-box">
+                        <h3>عرف اللبنة</h3>
+                        <p class="highlight-text">ناتج تكثيف اللبن 🥛.</p>
+                    </div>
 
-            <!-- Box 2 -->
-            <div class="dim-box">
-                <h3> علل يوضع اللبن في كيس قماش خفيف 🎒؟</h3>
-                <p class="highlight-text">ليسهل نزع الماء الموجود في اللبن إلى الخارج 💧.</p>
-            </div>
+                    <div class="dim-box">
+                        <h3>علل: يوضع اللبن في كيس قماش خفيف 🎒؟</h3>
+                        <p class="highlight-text">ليسهل نزع الماء الموجود في اللبن إلى الخارج 💧.</p>
+                    </div>
 
-            <!-- Box 3 -->
-            <div class="dim-box">
-                <h3>تحدث عن اللبنة🗣️  /   اذكر أهميتة اللبنة ✨</h3>
-                <div class="highlight-text">
-                    <p>📍 🍉غنية بالبروتينات 🍖 والدهون 🧈 والفيتامينات.</p>
-                    <p>📍تصنع من اللبن الرائب 🥛.</p>
-                    <p>📍تمتلك نسبة عالية من المواد الصلبة 🪨.</p>
+                    <div class="dim-box">
+                        <h3>تحدث عن اللبنة 🗣️ / اذكر أهمية اللبنة ✨</h3>
+                        <div class="highlight-text">
+                            <p>📍 غنية بالبروتينات 🍖، الدهون 🧈، والفيتامينات.</p>
+                            <p>📍 تصنع من اللبن الرائب 🥛.</p>
+                            <p>📍 تمتلك نسبة عالية من المواد الصلبة 🪨.</p>
+                        </div>
+                    </div>
+
+                    <div class="dim-box">
+                        <h3>اذكر صور اللبنة ⬜⚪</h3>
+                        <div class="highlight-text">
+                            <p>📍 اللبنة العادية (الطرية).</p>
+                            <p>📍 اللبنة المحفوظة بالزيت 🫒.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </section>
 
-            <!-- Box 4 -->
-            <div class="dim-box">
-                <h3>اذكر صور اللبنة ⬜⚪</h3>
-                <div class="highlight-text">
-                    <p>📍 اللبنة العادية (الطرية).</p>
-                    <p>📍اللبنة المحفوظة بالزيت 🫒.</p>
+        <section id="cheeseGOTO" class="study-section" style="background: url('mehanisummaryimages/cheese.jpg'); background-size: cover;">
+            <div class="tint"></div>
+            <div class="content">
+                <div class="main-title"><span>🧀</span> تصنيع الجبن</div>
+                <div class="info-grid">
+                    
+                    <div class="dim-box">
+                        <h3>عرف الجبن 🧀</h3>
+                        <p class="highlight-text">ما يجمد من اللبن ❄️، وهو غذاء صحي ❤️‍🩹 ومشهور، ويصنع من حليب الماعز 🐐، البقر 🐮، أو الغنم 🐑.</p>
+                    </div>
+
+                    <div class="dim-box">
+                        <h3>علل: للجبن موقع مهم 🥇 في صناعة الألبان 🥛</h3>
+                        <p class="highlight-text">📍 لأنه سهل الحفظ.<br>📍 ويسهل تسويقه.<br>📍 وقيمته الغذائية مرتفعة.</p>
+                    </div>
+
                 </div>
             </div>
+        </section>
 
-        </div>
-    </div>
-</section>
+        <section id="jameedGOTO" class="study-section" style="background: url('mehanisummaryimages/jameed.jpg'); background-size: cover;">
+            <div class="tint"></div>
+            <div class="content">
+                <div class="main-title"><span>⚪</span> طريقة تصنيع الجميد</div>
+                <div class="info-grid">
+                    
+                    <div class="dim-box">
+                        <h3>عرف الجميد ⚪</h3>
+                        <p class="highlight-text">منتج مصنع من اللبن المتخمر بعد نزع معظم الدهن 🧈.</p>
+                    </div>
 
+                    <div class="dim-box">
+                        <h3>بماذا يمتاز الجميد؟ ✨</h3>
+                        <p class="highlight-text">📍 إقبال المستهلك عليه.<br>📍 يسهل نقله وحفظه.<br>📍 تميز طعمه وسرعة تحضيره.</p>
+                    </div>
 
-
-
-        <!-- CHEESE -->
-<section id="cheeseGOTO" class="study-section"  style="background: url(mehanisummaryimages/cheese.jpg);background-size: cover;">
-    <div class="tint"></div>
-    <div class="content">
-        <div class="main-title"><span>🧀</span> تصنيع الجبن</div>
-        <div class="info-grid">
-            
-            <!-- Box 1 -->
-            <div class="dim-box">
-                <h3>عرف الجبن🧀</h3>
-                <p class="highlight-text">ما يجمد من اللبن❄️ , وهو غذاء صحي❤️‍🩹 ومشهور ويصنع من حليب الماعز🐐 أو البقر🐮 أو الغنم🐑.</p>
+                </div>
             </div>
+        </section>
 
-            <!-- Box 2 -->
-            <div class="dim-box">
-                <h3> علل للجبن موقع مهم🥇 في صناعة الألبان 🥛</h3>
-                <p class="highlight-text">📍 لأنه سهل الحفظ <br>📍 ويسهل تسويقه <br>📍 وقمته الغذائية مرتفعة</p>
+        <br>
+        <div style="font-weight: 1000; font-size: 3rem; text-align: center; margin: auto;">درس صيانة الأثاث الخشبي 🪵🛋️</div>
+        <br><br>
+
+        <nav style="position: relative;">
+            <a href="#furniGOTO">الأثاث 🛋️</a>
+            <a href="#createfurniGOTO">طرق إنتاج قطع الأثاث 🛠️</a>
+        </nav>
+        <br>
+
+        <section id="furniGOTO" class="study-section" style="background: url('mehanisummaryimages/woodfurni.jpg'); background-size: cover;">
+            <div class="tint"></div>
+            <div class="content">
+                <div class="main-title"><span>🛋️</span> الأثاث</div>
+                <div class="info-grid">
+                    
+                    <div class="dim-box">
+                        <h3>علل: قطع الأثاث 🛋️ أهم 🥇 عنصر ديكور في المنزل 🏠</h3>
+                        <p class="highlight-text">📍 توفر الراحة 😌.<br>📍 تعكس ذوق صاحبه 🧑.</p>
+                    </div>
+
+                    <div class="dim-box">
+                        <h3>عرف الأثاث 🛋️</h3>
+                        <p class="highlight-text">كل ما يستخدم في المنزل 🏠 أو المدارس 🏫 من قطع متحركة أو ثابتة؛ لتوفير الراحة 😌 وتحسين الأداء الوظيفي 👍.</p>
+                    </div>
+
+                    <div class="dim-box">
+                        <h3>كيف تحافظ على قطع الأثاث 🛋️❤️‍🩹؟</h3>
+                        <p class="highlight-text">بإجراء صيانة 🛠️ دورية؛ للمحافظة على جماليتها 🌹 وديمومتها.</p>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
-        </div>
-    </div>
-</section>
+        <section id="createfurniGOTO" class="study-section" style="background: url('mehanisummaryimages/createwood.jpg'); background-size: cover;">
+            <div class="tint"></div>
+            <div class="content">
+                <div class="main-title"><span>🛠️</span> طرق إنتاج قطع الأثاث</div>
+                <div class="info-grid">
+                    
+                    <div class="dim-box">
+                        <h3>ماذا يمكن استخدامه بجانب قطع الأثاث 🛋️؟</h3>
+                        <p class="highlight-text">📍 المعادن 🔨<br>📍 الزجاج 🍸<br>📍 البلاستيك 🟩<br>📍 الجلد<br>📍 الفلين</p>
+                    </div>
+                    
+                    <div class="dim-box">
+                        <h3>من الأمثلة على قطع الأثاث 🛋️:</h3>
+                        <p class="highlight-text">📍 الكراسي 🪑<br>📍 الطاولات<br>📍 الخزائن 🗄️<br>📍 الأسرة 🛏️</p>
+                    </div>
 
-
-
-<!-- JAMEED -->
-
-<section id="jameedGOTO" class="study-section"  style="background: url(mehanisummaryimages/jameed.jpg);background-size: cover;">
-    <div class="tint"></div>
-    <div class="content">
-        <div class="main-title"><span>⚪</span> طريقة تصنيع الجميد</div>
-        <div class="info-grid">
-            
-            <!-- Box 1 -->
-            <div class="dim-box">
-                <h3>عرف الجميد ⚪</h3>
-                <p class="highlight-text">منتج مصنع من اللبن المتخمر بعد نزع معظم الدهن 🧈.</p>
+                </div>
             </div>
+        </section>
 
-            <!-- Box 2 -->
-            <div class="dim-box">
-                <h3> بما يمتاز الجميد✨</h3>
-                <p class="highlight-text">📍 إقبال المستهلك عليه<br>📍 يسهل نقله وحفظه <br>📍 تميز طعمه وسرعة تحضيره</p>
+        <br>
+        <div style="font-weight: 1000; font-size: 3rem; text-align: center; margin: auto;">درس الإسعافات الأولية 😷❤️‍🩹</div>
+        <br><br>
+
+        <section id="darbatoshamsGOTO" class="study-section" style="background: url('mehanisummaryimages/darbato_ashams.jpg'); background-size: cover;">
+            <div class="tint"></div>
+            <div class="content">
+                <div class="main-title">ضربة الشمس 🌞🌻</div>
+                <div class="info-grid">
+                    
+                    <div class="dim-box">
+                        <h3>عرف ضربة الشمس 🌞🌻</h3>
+                        <p class="highlight-text">حالة طبية 😷 طارئة ⚡ تحدث بسبب التعرض الطويل لدرجة حرارة 🌡️ مرتفعة أو المجهود البدني 🏃 في الظروف الحارة 🔥 والرطبة.</p>
+                    </div>
+                    
+                    <div class="dim-box">
+                        <h3>متى تحدث ضربة الشمس 🌞😷؟</h3>
+                        <p class="highlight-text">عندما يفشل 🙁 نظام تنظيم درجة حرارة 🌡️ الجسم، فترتفع درجة الحرارة إلى مستوى خطير ⚠️.</p>
+                    </div>
+
+                    <div class="dim-box">
+                        <h3>ما هي الإجراءات الفورية ⚡ لإسعاف شخص مصاب 😷 بضربة الشمس 🌞؟</h3>
+                        <p class="highlight-text">📍 أشجع المصاب على شرب الماء البارد 💦.<br>📍 أتصل بالدفاع المدني أو بمن له دراية بالإسعافات الأولية.<br>📍 أبلل جلد المصاب بالماء 💦.</p>
+                    </div>
+
+                    <div class="dim-box">
+                        <h3>اذكر مضاعفات تأخير 🏃 علاج 😷 ضربة الشمس 🌞</h3>
+                        <p class="highlight-text">📍 تلف الدماغ 🧠.<br>📍 فشل بعض الأعضاء 🫘.<br>📍 الموت 💀.</p>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
-        </div>
-    </div>
-</section>
+        <section id="roaafGOTO" class="study-section" style="background: url('mehanisummaryimages/roaaf.jpg'); background-size: cover;">
+            <div class="tint"></div>
+            <div class="content">
+                <div class="main-title">الرعاف 🩸👃</div>
+                <div class="info-grid">
+                    
+                    <div class="dim-box">
+                        <h3>عرف النزيف / الرعاف 🩸👃</h3>
+                        <p class="highlight-text">سيلان الدم 🩸 من الأنف 👃.</p>
+                    </div>
+                    
+                    <div class="dim-box">
+                        <h3>طبيعة النزيف:</h3>
+                        <p class="highlight-text">يتدفق الدم 🩸 من إحدى فتحتي الأنف 👃 أو كلتيهما ✌️، ويكون قوياً 💪 أو خفيفاً، ويستمر من بضع ثوانٍ إلى 15 دقيقة أو أكثر.</p>
+                    </div>
 
+                    <div class="dim-box">
+                        <h3>خطوات إسعاف الرعاف 🩸👃 (فهم)</h3>
+                        <p class="highlight-text">📍 الجلوس باستقامة وأميل رأسي أماماً؛ لتجنب نزول الدم 🩸 إلى الحلق.<br>📍 تجنب الانحناء إلى الأمام وحمل أشياء 🛍️ ثقيلة 💪.<br>📍 أضغط بإبهامي 👍 وسبابتي ☝️ على عظمة 🦴 أنفي 👃؛ لتقليص الأوعية الدموية 🩸 وتخفيف النزيف.</p>
+                    </div>
 
+                    <div class="dim-box">
+                        <h3>علل: أجلس الشخص المصاب باستقامة وأميل رأسه للأمام قليلاً</h3>
+                        <p class="highlight-text">لمنع نزول الدم 🩸 إلى الحلق.</p>
+                    </div>
 
-<br>
-<span style="font-weight: 1000; font-size: 3rem;text-align:center;margin:auto;"> درس صيانة الأثاث الخشبي  🪵🛋️ </span><br><br>
-
-    <nav style="position:relative;">
-        <a href="#furniGOTO">الأثاث 🛋️</a>
-        <a href="#createfurniGOTO">طرق إنتاج قطع الأثاث 🛠️</a>
-    </nav><br>
-
-
-<section id="furniGOTO" class="study-section"  style="background: url(mehanisummaryimages/woodfurni.jpg);background-size: cover;">
-    <div class="tint"></div>
-    <div class="content">
-        <div class="main-title"><span>🛋️</span> الأثاث</div>
-        <div class="info-grid">
-            
-
-
-            <!-- Box 1 -->
-            <div class="dim-box">
-                <h3> علل قطع الأثاث🛋️ أهم🥇 عنصر ديكور في المنزل 🏠</h3>
-                <p class="highlight-text">📍 توفر راحة😌<br>📍 تعكس ذوق صاحبه 🧑</p>
+                </div>
             </div>
+        </section>
 
-            <!-- BOX 2 -->
-            <div class="dim-box">
-                <h3> عرف الأثاث 🛋️</h3>
-                <p class="highlight-text">كل ما يستخدم في المنزل🏠 أو المدارس🏫 من قطع متحركة أو ثابتة  لتوفير الراحة😌 وتحسين الأداء الوظيفي👍.</p>
+        <div style="font-weight: 1000; font-size: 3rem; text-align: center; margin: auto;">درس اللعب الآمن 🎮😃🛡️</div>
+        <br><br>
+
+        <nav style="position: relative;">
+            <a href="#safeplayrankingGOTO">تصنيف اللعب 🎮</a>
+            <a href="#safeplayrulesGOTO">🛡️🎮 قواعد عامة للعب الآمن</a>
+            <a href="#onlineplayGOTO">اللعب الآمن عبر الإنترنت 🛡️🌐🧑‍💻</a>
+        </nav>
+        <br>
+
+        <section id="safeplayrankingGOTO" class="study-section" style="background: url('mehanisummaryimages/safeplay.jpg'); background-size: cover;">
+            <div class="tint"></div>
+            <div class="content">
+                <div class="main-title">🎮 تصنيف اللعب</div>
+                <div class="info-grid">
+                    
+                    <div class="dim-box">
+                        <h3>أصنف الآتي إلى لعب آمن 👍✅ أو لعب غير آمن ❌👎⚠️</h3>
+                        <p class="highlight-text">
+                            📍 اللعب في الشارع [❌]<br>
+                            📍 اللعب برمي الحجارة 🪨 على الآخرين 👥 [❌]<br>
+                            📍 اللعب على الجهاز اللوحي (الآيباد/التابلت) لمدة ربع ساعة 🕑 [✅]<br>
+                            📍 اللعب مع الإخوة بأدوات حادة 🔪 [❌]<br>
+                            📍 لعب كرة القدم ⚽ بين طلاب الصف السادس وطلاب الصف العاشر [❌]<br>
+                            📍 لعب كرة القدم على مسطح عشبي [✅]<br>
+                            📍 اللعب بتسليط الضوء 💡 على عيون 👀 الآخرين [❌]<br>
+                            📍 لعب الشطرنج ♟️ في البيت لمدة ساعة 🕑 [✅]<br>
+                            📍 قيادة دراجة هوائية مع لبس واقي الرأس 🚴 [✅]<br>
+                            📍 اللعب بالثلج ⛄ مع الأهل من دون وضع حجارة 🪨 في كرات الثلج [✅]
+                        </p>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
-            <div class="dim-box">
-                <h3> كيف تحافظ على قطع الأثاث 🛋️❤️‍🩹</h3>
-                <p class="highlight-text">بإجراء صيانة🛠️ دورية؛ للمحافظة على جماليتها🌹 وديومتها.</p>
+        <section id="safeplayrulesGOTO" class="study-section" style="background: url('mehanisummaryimages/safeplayrules.jpg'); background-size: cover;">
+            <div class="tint"></div>
+            <div class="content">
+                <div class="main-title">🛡️🎮 قواعد عامة للعب الآمن</div>
+                <div class="info-grid">
+                    
+                    <div class="dim-box">
+                        <h3>اذكر قواعد اللعب الآمن 🛡️🎮</h3>
+                        <p class="highlight-text">📍 اختيار مكان لعب آمن 🛡️.<br>📍 تجنب اللعب بالزلاجات 🛼🛹.<br>📍 الانتباه للأشخاص في مكان اللعب وتجنب إيذائهم 🤕.</p>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
+        <section id="onlineplayGOTO" class="study-section" style="background: url('mehanisummaryimages/netsafeplay.jpg'); background-size: cover;">
+            <div class="tint"></div>
+            <div class="content">
+                <div class="main-title">اللعب الآمن عبر الإنترنت 🛡️🌐🧑‍💻</div>
+                <div class="info-grid">
+                    
+                    <div class="dim-box">
+                        <h3>اذكر قواعد اللعب الآمن بالألعاب الإلكترونية 🧑‍💻🌐🎮</h3>
+                        <p class="highlight-text">📍 عدم كشف تفاصيل الحساب الشخصية 🤐.<br>📍 عدم نشر المعلومات الشخصية 🤐.<br>📍 حظر اللاعب عند مواجهة سلوك لا يُشعر بالارتياح منه 🚫😓.</p>
+                    </div>
 
-        </div>
-    </div>
-</section>
+                    <div class="dim-box">
+                        <h3>علل: التحدث إلى الوالدين عند تلقي رسائل 💬 مسيئة 🤬 من حسابات متعددة</h3>
+                        <p class="highlight-text">منعاً لزيادة المشكلة سوءاً.</p>
+                    </div>
 
+                    <div class="dim-box">
+                        <h3>عدد فوائد الرقابة الأبوية 👨👁️</h3>
+                        <p class="highlight-text">📍 التحدث إلى الوالدين حول كيفية عمل برامج الرقابة الأبوية في الألعاب 👁️🗣️🎮.<br>📍 زيادة اهتمام الوالدين في ألعاب الإنترنت 🌐🎮.</p>
+                    </div>
 
-
-<section id="createfurniGOTO" class="study-section"  style="background: url(mehanisummaryimages/createwood.jpg);background-size: cover;">
-    <div class="tint"></div>
-    <div class="content">
-        <div class="main-title"><span>🛠️</span> طرق إنتاج قطع الأثاث</div>
-        <div class="info-grid">
-            
-            <!-- Box 1 -->
-            <div class="dim-box">
-                <h3> ماذا يمكن استخدامه بجانب قطع الأثاث 🛋️</h3>
-                <p class="highlight-text">📍 المعادن 🔨<br>📍 الزجاج 🍸<br>📍 البلاستيك 🟩<br>📍 الجلد <br>📍 الفلين</p>
+                </div>
             </div>
-            <div class="dim-box">
-                <h3> من الأمثلة على قطع الأثاث 🛋️</h3>
-                <p class="highlight-text">📍 الكراسي 🪑<br>📍 الطاولات <br>📍 الخزائن 🗄️<br>📍 الأسرة 🛏️</p>
-            </div>
+        </section>
 
-        </div>
-    </div>
-</section>
+        <div style="font-weight: 1000; font-size: 3rem; text-align: center; margin: auto;">درس إدارة المطاعم 🍔</div>
+        <br><br>
 
+        <p>لن يتم الإعداد.</p>
 
-<br>
-<span style="font-weight: 1000; font-size: 3rem;text-align:center;margin:auto;"> درس الإسعافات الأولية 😷❤️‍🩹 </span><br><br>
-
-
-
-
-<section id="darbatoshamsGOTO" class="study-section"  style="background: url(mehanisummaryimages/darbato\ ashams.jpg);background-size: cover;">
-    <div class="tint"></div>
-    <div class="content">
-        <div class="main-title"><span></span> ضربة الشمس 🌞🌻</div>
-        <div class="info-grid">
-            
-            <!-- Box 1 -->
-            <div class="dim-box">
-                <h3> عرف ضربة الشمس 🌞🌻</h3>
-                <p class="highlight-text">حالة طبية😷 طارئة⚡ تحدث بسبب التعرض الطويل لدرجة حرارة🌡️ مرتفعة أو المجهود البدني🏃 في الظروف الحارة🔥 والرطبة.</p>
-            </div>
-            <div class="dim-box">
-                <h3> متى تحدث ضربة الشمس 🌞😷</h3>
-                <p class="highlight-text"> عندما يفشل🙁 نظام تنظيم درجة حرارة🌡️ الجسم فترتفع درجة الحرارة إلى مستوى خطير⚠️.</p>
-            </div>
-
-            <div class="dim-box">
-                <h3> ما هي الإجراءات الفورية⚡ لإسعاف شخص مصاب😷 بضربة الشمس🌞</h3>
-                <p class="highlight-text">📍 أشجع المصاب على شرب الماء البارد 💦<br>📍 أتصل بالدفاع المدني أو بمن له دراية بالإسعافات الأولية<br>📍 أبلل جلد المصاب بالماء 💦</p>
-            </div>
-
-            <div class="dim-box">
-                <h3> اذكر مضاعفات تأخير🏃 علاج😷 ضربة الشمس🌞</h3>
-                <p class="highlight-text">📍 تلف الدماغ 🧠<br>📍 فشل بعض الأعضاء 🫘<br>📍 الموت 💀</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<section id="roaafGOTO" class="study-section"  style="background: url(mehanisummaryimages/roaaf.jpg);background-size: cover;">
-    <div class="tint"></div>
-    <div class="content">
-        <div class="main-title"><span></span> الرعاف 🩸👃</div>
-        <div class="info-grid">
-            
-            <!-- Box 1 -->
-            <div class="dim-box">
-                <h3> عرف النزيف 🩸👃</h3>
-                <p class="highlight-text">سيلان الدم🩸 من الأنف👃.</p>
-            </div>
-            <div class="dim-box">
-                <h3> </h3>
-                <p class="highlight-text">يتدفق الدم🩸 من إحدى فتحات الأنف👃 أو كليهما✌️ يكون قويا 💪 أو خفيف ويستمر من بضع ثوان إلى 15 دقيقة أو أكثر.</p>
-            </div>
-
-            <div class="dim-box">
-                <h3> خطوات إسعاف الرعاف🩸👃 (فهم)</h3>
-                <p class="highlight-text">📍 الجلوس باستقامة وأميل رأسي أماما لتجنب نزول الدم🩸 إلى الحلق<br>📍 تجنب الإنحناء إلى الأمام وحمل أشياء🛍️ ثقيلة💪<br>📍 أضغط بإبهامي👍 وسبابتي☝️ على عظمة🦴 أنفي👃 لتقليص الأوعية الدموية🩸 وتخفيف النزيف</p>
-            </div>
-
-            <div class="dim-box">
-                <h3> علل أجلس الشخص المصاب باستقامة وأميل رأسه للأمام قليلا</h3>
-                <p class="highlight-text">لمنع نزول الدم🩸 إلى الحلق</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-
-
-<span style="font-weight: 1000; font-size: 3rem;text-align:center;margin:auto;"> درس اللعب الآمن 🎮😃🛡️ </span><br><br>
-
-
-<nav style="position:relative;">
-        <a href="#safeplayrankingGOTO"> تصنيف اللعب 🎮</a>
-        <a href="#safeplayrulesGOTO">🛡️🎮 قواعد عامة للعب الآمن</a>
-        <a href="#onlineplayGOTO">اللعب اللآمن عبر الإنترنت 🛡️🌐🧑‍💻</a>
-    </nav><br>
-
-<section id="safeplayrankingGOTO" class="study-section"  style="background: url(mehanisummaryimages/safeplay.jpg);background-size: cover;">
-    <div class="tint"></div>
-    <div class="content">
-        <div class="main-title"><span></span>  🎮 تصنيف اللعب</div>
-        <div class="info-grid">
-            
-            <!-- Box 1 -->
-            <div class="dim-box">
-                <h3> أصنف الآتي إلى لعب آمن 👍✅ أو لعب غير آمن ❌👎⚠️</h3>
-                <p class="highlight-text">📍 اللعب في الشارع [❌]<br>📍 اللعب برمي الحجارة🪨 على الآخرين 👥 [❌]<br>📍 اللعب على الجهاز اللوحي (الآيباد/التابلت) 🕑 لمدة ربع ساعة [✅]<br>📍 اللعب مع الإخوة بأدوات حادة 🔪 [❌]<br>📍 لعب كرة القدم⚽ بين طلاب الصف السادس وطلاب الصف العاشر [❌]<br>📍 لعب كرة القدم على مسطح عشبي [✅]<br>📍  اللعب بتسليط الضوء💡 على عيون 👀 الآخرين [❌]<br>📍 لعب الشطرنج♟️ في البيت لمدة ساعة 🕑 [✅]<br>📍 قيادة دراجة هوائية مع لبس واقي الرأس 🚴 [✅]<br>📍 اللعب بالثلج ⛄ مع الأهل من دون وضع حجارة🪨 في كرات الثلج [✅]</p>
-            </div>
-
-
-        </div>
-    </div>
-</section>
-
-
-
-<section id="safeplayrulesGOTO" class="study-section"  style="background: url(mehanisummaryimages/safeplayrules.jpg);background-size: cover;">
-    <div class="tint"></div>
-    <div class="content">
-        <div class="main-title"><span></span> 🛡️🎮 قواعد عامة للعب الآمن</div>
-        <div class="info-grid">
-            
-            <!-- Box 1 -->
-            <div class="dim-box">
-                <h3> اذكر قواعد اللعب الآمن 🛡️🎮</h3>
-                <p class="highlight-text">📍 اختيار مكان لعب آمن 🛡️<br>📍 تجنب اللعب بالزلاجات 🛼🛹<br>📍 الانبتاه للأشخاص في مكان اللعب وتجنب إيذائهم 🤕</p>
-            </div>
-
-
-        </div>
-    </div>
-</section>
-
-
-<section id="onlineplayGOTO" class="study-section"  style="background: url(mehanisummaryimages/mehanisummaryimages/netsafeplay.jpg);background-size: cover;">
-    <div class="tint"></div>
-    <div class="content">
-        <div class="main-title"><span></span> اللعب اللآمن عبر الإنترنت 🛡️🌐🧑‍💻</div>
-        <div class="info-grid">
-            
-            <!-- Box 1 -->
-            <div class="dim-box">
-                <h3> اذكر قواعد اللعب الآمن بالألعاب الإلكترونية 🧑‍💻🌐🎮</h3>
-                <p class="highlight-text">📍 عدم كشف تفاصيل الحساب الشخصية 🤐<br>📍 عدم نشر المعلومات الشخصية 🤐<br>📍 حظر اللاعب عند مواجهة سلوك لا يُشعر بالإرتياح منه 🚫😓</p>
-            </div>
-
-            <div class="dim-box">
-                <h3> علل التحدث إلى الوالدين عند تلقي رسالات💬 مسيئة🤬 من حسابات متعددة</h3>
-                <p class="highlight-text">منعا لزيادة المشكلة سوءًا </p>
-            </div>
-
-            <div class="dim-box">
-                <h3> عدد فوائد المراقبة الأبوية 👨👁️</h3>
-                <p class="highlight-text">📍 التحدث إلى الوالدين حول كيفية عمل برامج الراقبة الأبوية في الألعاب 👁️🗣️🎮<br>📍 زيادة اهتمام الوالدين في ألعاب الإنترنت 🌐🎮</p>
-            </div>
-
-
-        </div>
-    </div>
-</section>
-
-<span style="font-weight: 1000; font-size: 3rem;text-align:center;margin:auto;"> درس إدارة المطاعم 🍔 </span><br><br>
-
-<p>لن يتم الإعداد.</p>
-
-</main>
+    </main>
     <br>
-    </div>
+</div>
 </body>
 </html>
